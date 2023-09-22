@@ -32,11 +32,6 @@
 			"source": "/dev/ttyACM0",
 			"target": "/dev/ttyACM0",
 			"type": "bind"
-		},
-		{
-			"source": "devcontainer-cargo-cache-${devcontainerId}",
-			"target": "/usr/local/cargo",
-			"type": "volume"
 		}
 	]
 }

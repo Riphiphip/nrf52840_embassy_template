@@ -18,3 +18,5 @@ RUN rustup target add thumbv7em-none-eabihf
 RUN cargo install probe-run
 RUN cargo install probe-rs --features cli
 RUN cargo install flip-link
+
+RUN git config --global core.autocrlf true
