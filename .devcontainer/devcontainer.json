@@ -1,0 +1,42 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/rust
+{
+	"name": "Rust",
+	"runArgs": [
+		"--privileged"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"marus25.cortex-debug",
+				"probe-rs.probe-rs-debugger",
+				"ms-azuretools.vscode-docker"
+			]
+		}
+	},
+	"build": {
+		"dockerfile": "./Dockerfile"
+	},
+	"features": {
+		"ghcr.io/dhoeric/features/act:1": {}
+	},
+	"containerUser": "vscode",
+	"updateRemoteUserUID": true,
+	"mounts": [
+		{
+			"source": "/dev/bus/usb",
+			"target": "/dev/bus/usb",
+			"type": "bind"
+		},
+		{
+			"source": "/dev/ttyACM0",
+			"target": "/dev/ttyACM0",
+			"type": "bind"
+		},
+		{
+			"source": "devcontainer-cargo-cache-${devcontainerId}",
+			"target": "/usr/local/cargo",
+			"type": "volume"
+		}
+	]
+}
